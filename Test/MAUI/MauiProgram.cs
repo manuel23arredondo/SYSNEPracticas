@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using MAUI.Pages;
+using MAUI.Services;
+using Microsoft.Extensions.Logging;
 
 namespace MAUI
 {
@@ -18,6 +20,7 @@ namespace MAUI
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
+            builder.Services.AddTransient<AddService>();
 
             return builder.Build();
         }

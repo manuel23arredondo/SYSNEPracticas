@@ -64,17 +64,12 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
 	</ItemGroup>
 
-<<<<<<< Updated upstream
-=======
 	<ItemGroup>
+	  <Folder Include="DataAccess\" />
+	  <Folder Include="DTOs\" />
+	  <Folder Include="ViewsModels\" />
+	  <Folder Include="Views\" />
 	  <Folder Include="Services\" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <MauiXaml Update="Views\VideoGamePage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	</ItemGroup>
-
->>>>>>> Stashed changes
 </Project>

@@ -32,6 +32,8 @@ namespace MAUI
 
             Routing.RegisterRoute(nameof(VideoGamePage), typeof(VideoGamePage));
 
+            Routing.RegisterRoute(nameof(VideoGamePage), typeof(VideoGamePage));
+
 #if DEBUG
             builder.Logging.AddDebug();
 #endif

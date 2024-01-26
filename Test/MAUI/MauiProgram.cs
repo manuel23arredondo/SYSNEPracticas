@@ -1,4 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
+using MAUI.DataAccess;
+using MAUI.ViewsModels;
+using MAUI.Views;
 
 namespace MAUI
 {
@@ -15,8 +18,22 @@ namespace MAUI
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            var dbContext = new VideoGMDbContext();
+            dbContext.Database.EnsureCreated();
+            dbContext.Dispose();
+
+            builder.Services.AddDbContext<VideoGMDbContext>();
+
+            builder.Services.AddTransient<VideoGamePage>();
+            builder.Services.AddTransient<VideoGameVModel>();
+
+            builder.Services.AddTransient<MainPage>();
+            builder.Services.AddTransient<MainViewModel>();
+
+            Routing.RegisterRoute(nameof(VideoGamePage), typeof(VideoGamePage));
+
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();

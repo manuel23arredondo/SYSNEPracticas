@@ -5,7 +5,9 @@ namespace MAUI.Models;
 public class Videogame
 {
     [Key]
-    public int id{ get; set; }
+//<<<<<<< HEAD
+    public int IdVideoGame{ get; set; }
+//>>>>>>> main
     public string Name { get; set; }
     public string Description { get; set; }
     public string Price { get; set; }
